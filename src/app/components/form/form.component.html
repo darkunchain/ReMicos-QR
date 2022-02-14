@@ -1,0 +1,28 @@
+<h3>Promo Caprichoso</h3>
+
+
+
+<!-- <div class="cart-item" *ngFor="let item of items">
+  <span>{{ item.name }} </span>
+  <span>{{ item.price | currency }}</span>
+</div> -->
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+
+  <div>
+    <label for="correo">
+      Correo electronico
+    </label>
+    <input id="correo" type="text" formControlName="correo">
+  </div>
+
+  <div>
+    <label for="telefono">
+      Telefono de contacto
+    </label>
+    <input id="telefono" type="text" formControlName="telefono">
+  </div>
+
+  <button class="button" type="submit">Vender</button>
+
+</form>
