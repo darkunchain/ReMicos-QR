@@ -20,7 +20,7 @@ export class SendDataService {
   }
 
   postPromo(promo:Cliente){
-    this.http.post<any>('http://app.remicos.com.co:3000/api/addPromo',promo).subscribe(data => {
+    this.http.post<any>('http://app.remicos.com.co:8081/api/addPromo',promo).subscribe(data => {
         this.idPromo = data.token;
         this.id$.next(this.idPromo);
         console.log('this.idPromo: ',typeof this.idPromo)
