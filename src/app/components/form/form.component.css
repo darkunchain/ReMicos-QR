@@ -1,0 +1,64 @@
+@media (min-width: 200px) {
+  .alerta {
+    font-size: 0.8rem!important;
+    position: relative;
+    padding: 0.1rem 0.1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .alerta {
+    font-size: 0.8rem!important;
+    position: relative;
+    padding: 0.1rem 0.1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+  }
+}
+@media (min-width: 768px) {
+  .alerta {
+    font-size: 0.8rem!important;
+    position: relative;
+    padding: 0.1rem 0.1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+  }
+}
+@media (min-width: 992px) {
+  .alerta {
+    font-size: 0.8rem!important;
+    position: relative;
+    padding: 0.1rem 0.1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+  }
+}
+@media (min-width: 1200px) {
+  .alerta {
+    font-size: 0.8rem!important;
+    position: relative;
+    padding: 0.1rem 0.1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+  }
+}
+@media (min-width: 1400px) {
+  .alerta {
+    font-size: 0.8rem!important;
+    position: relative;
+    padding: 0.1rem 0.1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+  }
+}
+
+
+

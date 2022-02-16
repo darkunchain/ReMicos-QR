@@ -1,0 +1,10 @@
+.navbar {
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  padding-inline-start: 1rem;
+  padding-inline-end: 1rem;
+}
+
+.brand{
+  margin-left: 1rem;
+}
