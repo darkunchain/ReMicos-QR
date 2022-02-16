@@ -31,8 +31,4 @@ export class SendDataService {
     return this.id$.asObservable();
   }
 
-  genQR(token:Observable<String>){
-    //this.token$.next(token);
-
-  }
-}
+ }

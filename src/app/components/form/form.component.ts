@@ -64,7 +64,6 @@ export class FormComponent implements OnInit, OnDestroy {
         console.log('data: ', data)
       })
 
-      //this.sendDataService.genQR(this.idToken)
       this.datosValidos=true
       this.router.navigate(['/qrgen'])
     }else{
