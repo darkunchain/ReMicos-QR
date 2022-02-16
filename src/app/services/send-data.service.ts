@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Cliente } from '../Interfaces/cliente';
 import { Observable, Subject } from 'rxjs';
 
@@ -20,7 +20,12 @@ export class SendDataService {
   }
 
   postPromo(promo:Cliente){
-    this.http.post<any>('http://app.remicos.com.co:8081/api/addPromo',promo).subscribe(data => {
+    let httpHeaders = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('Cache-Control', 'no-cache');
+    let options = { headers: httpHeaders };
+
+    this.http.post<any>('http://app.remicos.com.co:8081/api/addPromo',promo,options).subscribe(data => {
         this.idPromo = data.token;
         this.id$.next(this.idPromo);
         console.log('this.idPromo: ',typeof this.idPromo)
