@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
 import { Cliente } from 'src/app/Interfaces/cliente';
 import { SendDataService } from 'src/app/services/send-data.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -9,9 +11,11 @@ import { SendDataService } from 'src/app/services/send-data.service';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
-export class FormComponent implements OnInit {
+export class FormComponent implements OnInit, OnDestroy {
 
   datosValidos:boolean = false
+  idToken:String = ''
+  subscribe1:any
   formulario: FormGroup;
   correo: FormControl = new FormControl;
   telefono: FormControl = new FormControl;
@@ -27,7 +31,7 @@ export class FormComponent implements OnInit {
 
 
 
-  constructor(private sendDataService:SendDataService) {
+  constructor(private sendDataService:SendDataService, private router: Router,) {
 
     this.correo = new FormControl('',[
       Validators.required,
@@ -55,19 +59,31 @@ export class FormComponent implements OnInit {
   onSubmit(datos:Cliente) {
     if (this.formulario.valid){
       this.sendDataService.postPromo(datos)
-      console.log('this.contactform:',datos)
-      console.log('datos validos')
+      this.subscribe1 = this.sendDataService.traeId().subscribe(data => {
+        this.idToken = data
+        console.log('data: ', data)
+      })
+
+      //this.sendDataService.genQR(this.idToken)
       this.datosValidos=true
+      this.router.navigate(['/qrgen'])
     }else{
       console.log('datos no validos')
+      this.router.navigate(['/home'])
     }
 
     this.formulario.reset();
     this.datosValidos=false
   }
 
+
+
   redimir(datos:Cliente) {
     console.log('clase redimir', datos)
+  }
+
+  ngOnDestroy(){
+    this.subscribe1.unsubscribe()
   }
 
 }

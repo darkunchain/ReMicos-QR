@@ -1,7 +1,19 @@
-<qr-code value="http://app.remicos.com.co:83"
-         size=300
-         errorCorrectionLevel="H"
-         centerImageSrc="./assets/img/caprichos.svg"
-         centerImageSize=80
-         >
-</qr-code>
+<div class="container">
+  <div class="row">
+    Por favor guarde el codigo QR en un lugar seguro para redimirlo mas adelante.
+  </div>
+  <div class="row">
+
+    <qr-code value={{this.valor}} size=300 errorCorrectionLevel="H" centerImageSrc="./assets/img/caprichos.svg"
+      centerImageSize=80>
+    </qr-code>
+
+  </div>
+
+  <div class="row">
+    <button class="button" type="button" [routerLink]="'/home'">Volver</button>
+  </div>
+
+
+
+</div>
