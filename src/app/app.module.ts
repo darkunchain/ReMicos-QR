@@ -9,13 +9,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
 
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { RedimirComponent } from './components/redimir/redimir.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GenQRComponent,
     FormComponent,
-    HeaderComponent
+    HeaderComponent,
+    RedimirComponent
   ],
   imports: [
     BrowserModule,
