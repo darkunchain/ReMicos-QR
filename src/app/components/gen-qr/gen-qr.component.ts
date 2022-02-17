@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SendDataService } from 'src/app/services/send-data.service';
 
 
@@ -16,14 +17,22 @@ export class GenQRComponent implements OnInit, OnDestroy{
   value = 'Techiediaries';
   idToken:String =''
 
-  constructor(private sendDataService:SendDataService) { }
+  constructor(
+    private sendDataService:SendDataService,
+    private readonly router:Router) { }
 
   ngOnInit(): void {
     this.subscriber1 = this.sendDataService.traeId().subscribe(data => {
       this.idToken = data;
-      this.valor = 'http://app.remicos.com.co:84/qrgen/' + data;
+      this.valor = 'http://app.remicos.com.co:84/#/qrgen/' + data;
+      this.router.navigate(['qrgen'], {queryParams: {id:this.idToken}})
       console.log('token en QR: ', data, 'valor: ', this.valor)
     })
+
+  }
+
+  goToRedimir(){
+
   }
 
   ngOnDestroy(){
