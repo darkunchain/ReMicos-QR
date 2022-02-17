@@ -9,8 +9,9 @@ const routes: Routes = [
   { path: 'qrgen', component: GenQRComponent },
   { path: 'redime', component: RedimirComponent },
   { path: 'qrgen/:id', redirectTo: '/redime' },
-  { path: '**', redirectTo: '/redime' },
   { path: '', component: FormComponent },
+  { path: '**', redirectTo: '/redime' },
+
 ];
 
 @NgModule({
