@@ -9,12 +9,12 @@ const routes: Routes = [
   { path: '', component: FormComponent },
   { path: 'qrgen', component: GenQRComponent },
   { path: 'redime', component: RedimirComponent },
-  { path: 'qrgen/:id', redirectTo: '/redime', pathMatch: 'full' },
-  { path: '**', redirectTo: '/redime', pathMatch: 'full' },
+  { path: 'qrgen/:id', redirectTo: '/redime', pathMatch: 'prefix' },
+  { path: '**', redirectTo: '/redime' },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
