@@ -24,8 +24,7 @@ export class GenQRComponent implements OnInit, OnDestroy{
   ngOnInit(): void {
     this.subscriber1 = this.sendDataService.traeId().subscribe(data => {
       this.idToken = data;
-      this.valor = 'http://app.remicos.com.co:84/#/qrgen/' + data;
-      this.router.navigate(['qrgen'], {queryParams: {id:this.idToken}})
+      this.valor = 'http://app.remicos.com.co:8081/api/promos/' + data;
       console.log('token en QR: ', data, 'valor: ', this.valor)
     })
 
