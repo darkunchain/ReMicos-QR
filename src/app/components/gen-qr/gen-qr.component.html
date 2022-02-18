@@ -4,7 +4,7 @@
   </div>
   <div class="row">
 
-    <qr-code value={{this.valor}} size=300 errorCorrectionLevel="H" centerImageSrc="./assets/img/caprichos.svg"
+    <qr-code value={{this.valor}} size=300 errorCorrectionLevel="H" centerImageSrc={{this.ImgRemicos}}
       centerImageSize=80>
     </qr-code>
 
@@ -12,9 +12,7 @@
 
   <div class="row">
     <button class="button" type="button" [routerLink]="'/'">Volver</button>
-    <button class="button" type="button" [routerLink]="['/qrgen', this.idToken]">Redime</button>
+    <button class="button" type="button" href="http://app.remicos.com.co:8081/api/promos/"{{this.idToken}}>Redime</button>
   </div>
-
-
 
 </div>

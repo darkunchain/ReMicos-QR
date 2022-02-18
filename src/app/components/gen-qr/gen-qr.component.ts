@@ -12,10 +12,12 @@ export class GenQRComponent implements OnInit, OnDestroy{
 
   subscriber1:any
   valor:String =''
-  title = 'app';
-  elementType = 'url';
-  value = 'Techiediaries';
+  title = '';
+  elementType = '';
+  value = '';
   idToken:String =''
+  ImgRemicos="./assets/img/logo-cubos.svg"
+  ImgCaprichos="./assets/img/caprichos.svg"
 
   constructor(
     private sendDataService:SendDataService,
