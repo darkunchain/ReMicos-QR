@@ -1,7 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SendDataService } from 'src/app/services/send-data.service';
-
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-gen-qr',
@@ -21,7 +21,8 @@ export class GenQRComponent implements OnInit, OnDestroy{
 
   constructor(
     private sendDataService:SendDataService,
-    private readonly router:Router) { }
+    private readonly router:Router,
+    @Inject(DOCUMENT) private document: Document) { }
 
   ngOnInit(): void {
     this.subscriber1 = this.sendDataService.traeId().subscribe(data => {
@@ -33,7 +34,7 @@ export class GenQRComponent implements OnInit, OnDestroy{
   }
 
   goToRedimir(){
-
+    this.document.location.href = 'http://app.remicos.com.co:8081/api/promos/' + this.idToken;
   }
 
   ngOnDestroy(){
