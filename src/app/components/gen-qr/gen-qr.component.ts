@@ -28,6 +28,7 @@ export class GenQRComponent implements OnInit, OnDestroy{
     this.subscriber1 = this.sendDataService.traeId().subscribe(data => {
       this.idToken = data;
       this.valor = 'http://app.remicos.com.co:8081/api/promos/' + data;
+      //this.valor = 'http://app.remicos.com.co:84/';
       console.log('token en QR: ', data, 'valor: ', this.valor)
     })
 
