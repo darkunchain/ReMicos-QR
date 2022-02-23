@@ -11,8 +11,13 @@
   </div>
 
   <div class="row">
-    <button class="button" type="button" [routerLink]="'/'">Volver</button>
-    <button class="button" type="button" (click)="goToRedimir()">Redime</button>
+    <div class="col">
+      <button class="btn btn-block waves-effect waves-light red lighten-2 white-text" type="button" [routerLink]="'/'">Volver<i class="material-icons left">backspace</i></button>
+    </div>
+    <div class="col">
+      <button class="btn btn-block waves-effect waves-light light-blue accent-4 white-text" type="button" (click)="goToRedimir()">Redimir<i class="material-icons left">sell</i></button>
+    </div>
+
   </div>
 
 </div>
