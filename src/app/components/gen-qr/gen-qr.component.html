@@ -4,12 +4,9 @@
   </div>
   <div class="row">
 
-    <canvas id="qrimage">
-      <qr-code value={{this.valor}} size=300 errorCorrectionLevel="H" centerImageSrc={{this.ImgCaprichos}}
+      <qr-code class="canvasqr" value={{this.valor}} size=300 errorCorrectionLevel="H" centerImageSrc={{this.centerImage}}
         centerImageSize=120>
       </qr-code>
-    </canvas>
-
 
   </div>
 
@@ -20,13 +17,5 @@
 
 </div>
 
-<script type="text/javascript">
-  var canvas = document.getElementById('qrimage');
-  var ctx = canvas.getContext('2d');
-  ctx.beginPath();
-  ctx.arc(100, 100, 50, 1.5 * Math.PI, 0.5 * Math.PI, false);
-  ctx.lineWidth = 10;
-  ctx.stroke();
-  var imgData = canvas.toDataURL();
-</script>
+
 

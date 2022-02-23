@@ -1,9 +1,10 @@
 @media (min-width: 200px) {
   .alerta {
-    font-size: 0.8rem!important;
+    font-size: 0.65rem!important;
     position: relative;
-    padding: 0.1rem 0.1rem;
+    padding: 0.01rem 0.01rem;
     margin-bottom: 1rem;
+    margin-left: 3rem;
     border: 1px solid transparent;
     border-radius: 0.25rem;
   }
@@ -11,10 +12,11 @@
 
 @media (min-width: 576px) {
   .alerta {
-    font-size: 0.8rem!important;
+    font-size: 0.65rem!important;
     position: relative;
-    padding: 0.1rem 0.1rem;
+    padding: 0.01rem 0.01rem;
     margin-bottom: 1rem;
+    margin-left: 3rem;
     border: 1px solid transparent;
     border-radius: 0.25rem;
   }

@@ -6,6 +6,7 @@ import { SendDataService } from 'src/app/services/send-data.service';
 import {Router} from '@angular/router';
 
 
+
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -20,6 +21,8 @@ export class FormComponent implements OnInit, OnDestroy {
   correo: FormControl = new FormControl;
   telefono: FormControl = new FormControl;
   codigo: FormControl = new FormControl;
+
+
 
 
   validationMessages = {

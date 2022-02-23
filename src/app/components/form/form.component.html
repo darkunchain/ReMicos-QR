@@ -3,33 +3,46 @@
   <div class="well span2">
     <form [formGroup]="formulario" (ngSubmit)="onSubmit(formulario.value)">
       <div class="form-group">
-        <label for="correo">Correo electronico</label>
-        <input type="text" name="correo" class="form-control" formControlName="correo" placeholder="correo@correo.com"
-          required />
-        <div class="alerta alert-danger mb-1" *ngIf="correo.errors?.required">
-          Este campo es requerido
+        <div class="input-field col s12">
+          <i class="material-icons prefix">textsms</i>
+          <input type="text" id="correo" name="correo" class="autocomplete" formControlName="correo" required />
+          <label for="correo">Correo electronico</label>
+          <div class="alerta alert-danger mb-1" *ngIf="correo.errors?.required">
+            Este campo es requerido
+          </div>
+          <div class="alerta  alert-danger mb-1" *ngIf="correo.errors?.pattern">
+            Debe escribir un correo valido !!!
+          </div>
         </div>
-        <div class="alerta  alert-danger mb-1" *ngIf="correo.errors?.pattern">
-          Debe escribir un correo valido !!!
-        </div>
+
+
+
       </div>
 
       <div class="form-group">
-        <label for="telefono">Telefono de contacto</label>
-        <input type="text" name="telefono" class="form-control" formControlName="telefono" placeholder="Telefono" />
-        <div class="alerta alert-info" role="alert"></div>
+        <div class="input-field col s12">
+          <i class="material-icons prefix">textsms</i>
+          <input type="text" id="telefono" name="telefono" class="autocomplete" formControlName="telefono"/>
+          <label for="telefono">Telefono de contacto</label>
+        </div>
+
+
       </div>
 
       <div class="form-group">
-        <label for="codigo">Código de autorización</label>
-        <input type="text" name="codigo" class="form-control" formControlName="codigo"
-          placeholder="Código de aprobación" required />
-        <div class="alerta alert-danger mb-1" *ngIf="codigo.errors?.required">
-          Este campo es requerido
+        <div class="input-field col s12">
+          <i class="material-icons prefix">textsms</i>
+          <input type="text" id="codigo" name="codigo" class="autocomplete" formControlName="codigo" required />
+          <label for="codigo">Código de autorización</label>
+          <div class="alerta alert-danger mb-1" *ngIf="codigo.errors?.required">
+            Este campo es requerido
+          </div>
+          <div class="alerta  alert-danger mb-1" *ngIf="codigo.errors?.minlength">
+            El codigo debe tener minimo 8 caracteres !!!
+          </div>
         </div>
-        <div class="alerta  alert-danger mb-1" *ngIf="codigo.errors?.minlength">
-          El codigo debe tener minimo 8 caracteres !!!
-        </div>
+
+
       </div>
 
 
@@ -42,7 +55,15 @@
       </div>
 
       <button class="button" type="submit" [disabled]="!formulario.valid">Vender</button>
+
+
+
     </form>
   </div>
 
+
+
 </div>
+
+
+
