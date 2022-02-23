@@ -1,71 +1,126 @@
 <div class="container justify-content-center">
   <h3>Promo Caprichoso</h3>
+   <!-- %%%%%%%%%%%% Inicio formulario %%%%%%%%%%%%%%%% -->
   <div class="well span2">
     <form [formGroup]="formulario" (ngSubmit)="onSubmit(formulario.value)">
-      <div class="form-group">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">mail</i>
-          <input type="text" id="correo" name="correo" class="autocomplete" formControlName="correo" required />
-          <label for="correo">Correo electronico</label>
-          <div class="alerta alert-danger mb-1" *ngIf="correo.errors?.required">
-            Este campo es requerido
+  <ul class="collapsible">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">redeem</i>Catalogo de Promos</div>
+      <div class="collapsible-body">       
+        
+        <div class="row">
+          <div class="col s6 m3">
+            <div class="card blue-grey darken-1">
+              <div class="card-content white-text">
+                <span class="card-title">Promo 1</span>
+                <p>1 Helado + 15 minutos</p>
+              </div>
+              <div class="card-action">
+                <input class="with-gap" name="promos" type="radio" id="promo1"  />
+                <label for="promo1">Seleccionar</label>
+              </div>
+            </div>
           </div>
-          <div class="alerta  alert-danger mb-1" *ngIf="correo.errors?.pattern">
-            Debe escribir un correo valido !!!
+
+          <div class="col s6 m3">
+            <div class="card blue-grey darken-1">
+              <div class="card-content white-text">
+                <span class="card-title">Promo 2</span>
+                <p>2 Helados + 15 minutos</p>
+              </div>
+              <div class="card-action">
+                <input class="with-gap" name="promos" type="radio" id="promo2"  />
+                <label for="promo2">Seleccionar</label>
+              </div>
+            </div>
           </div>
+
+          <div class="col s6 m3">
+            <div class="card blue-grey darken-1">
+              <div class="card-content white-text">
+                <span class="card-title">Promo 3</span>
+                <p>2 Helados + 30 minutos</p>
+              </div>
+              <div class="card-action">
+                <input class="with-gap" name="promos" type="radio" id="promo3"  />
+                <label for="promo3">Seleccionar</label>
+              </div>
+            </div>
+          </div>
+
+
         </div>
 
 
-
-      </div>
-
-      <div class="form-group">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">call</i>
-          <input type="text" id="telefono" name="telefono" class="autocomplete" formControlName="telefono"/>
-          <label for="telefono">Telefono de contacto</label>
-        </div>
-
-
-      </div>
-
-      <div class="form-group">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">fingerprint</i>
-          <input type="text" id="codigo" name="codigo" class="autocomplete" formControlName="codigo" required />
-          <label for="codigo">Código de autorización</label>
-          <div class="alerta alert-danger mb-1" *ngIf="codigo.errors?.required">
-            Este campo es requerido
-          </div>
-          <div class="alerta  alert-danger mb-1" *ngIf="codigo.errors?.minlength">
-            El codigo debe tener minimo 8 caracteres !!!
+        
+         
+      </div>  <!-- Collapsible body-->
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">local_atm</i>Venta de Promos</div>
+      <div class="collapsible-body">
+        
+        <div class="form-group">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">mail</i>
+            <input type="text" id="correo" name="correo" class="autocomplete" formControlName="correo" required />
+            <label for="correo">Correo electronico</label>
+            <div class="alerta alert-danger mb-1" *ngIf="correo.errors?.required">
+              Este campo es requerido
+            </div>
+            <div class="alerta  alert-danger mb-1" *ngIf="correo.errors?.pattern">
+              Debe escribir un correo valido !!!
+            </div>
           </div>
         </div>
-
-
-      </div>
-
-
-
-      <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="this.datosValidos">
-        el usuario se envio con exito !!!
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
-     <div class="row">
-       <div class="col s6 offset-s4 m6 offset-m4 l4 offset-l5 xl4 offset-xl5">
-        <button class="btn waves-effect waves-light light-blue accent-3 block" type="submit" [disabled]="!formulario.valid">Vender
-          <i class="material-icons left">shopping_cart</i>
-        </button>
+        <div class="form-group">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">call</i>
+            <input type="text" id="telefono" name="telefono" class="autocomplete" formControlName="telefono"/>
+            <label for="telefono">Telefono de contacto</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">fingerprint</i>
+            <input type="text" id="codigo" name="codigo" class="autocomplete" formControlName="codigo" required />
+            <label for="codigo">Código de autorización</label>
+            <div class="alerta alert-danger mb-1" *ngIf="codigo.errors?.required">
+              Este campo es requerido
+            </div>
+            <div class="alerta  alert-danger mb-1" *ngIf="codigo.errors?.minlength">
+              El codigo debe tener minimo 8 caracteres !!!
+            </div>
+          </div>
+        </div>
+        <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="this.datosValidos">
+          el usuario se envio con exito !!!
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+       <div class="row">
+         <div class="col s6 offset-s4 m6 offset-m4 l4 offset-l5 xl4 offset-xl5">
+          <button class="btn waves-effect waves-light light-blue accent-3 block" type="submit" [disabled]="!formulario.valid">Vender
+            <i class="material-icons left">shopping_cart</i>
+          </button>
+         </div>
        </div>
-     </div>
 
 
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+  </ul>
+</form>
+</div>
+<!-- %%%%%%%%%%%% Fin formulario %%%%%%%%%%%%%%%% -->
 
-    </form>
-  </div>
+
+  
 
 
 
