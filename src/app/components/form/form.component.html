@@ -4,7 +4,7 @@
     <form [formGroup]="formulario" (ngSubmit)="onSubmit(formulario.value)">
       <div class="form-group">
         <div class="input-field col s12">
-          <i class="material-icons prefix">textsms</i>
+          <i class="material-icons prefix">mail</i>
           <input type="text" id="correo" name="correo" class="autocomplete" formControlName="correo" required />
           <label for="correo">Correo electronico</label>
           <div class="alerta alert-danger mb-1" *ngIf="correo.errors?.required">
@@ -21,7 +21,7 @@
 
       <div class="form-group">
         <div class="input-field col s12">
-          <i class="material-icons prefix">textsms</i>
+          <i class="material-icons prefix">call</i>
           <input type="text" id="telefono" name="telefono" class="autocomplete" formControlName="telefono"/>
           <label for="telefono">Telefono de contacto</label>
         </div>
@@ -31,7 +31,7 @@
 
       <div class="form-group">
         <div class="input-field col s12">
-          <i class="material-icons prefix">textsms</i>
+          <i class="material-icons prefix">fingerprint</i>
           <input type="text" id="codigo" name="codigo" class="autocomplete" formControlName="codigo" required />
           <label for="codigo">Código de autorización</label>
           <div class="alerta alert-danger mb-1" *ngIf="codigo.errors?.required">
@@ -54,7 +54,13 @@
         </button>
       </div>
 
-      <button class="button" type="submit" [disabled]="!formulario.valid">Vender</button>
+     <div class="row">
+       <div class="col s6 offset-s4 m6 offset-m4 l4 offset-l5 xl4 offset-xl5">
+        <button class="btn waves-effect waves-light light-blue accent-3 block" type="submit" [disabled]="!formulario.valid">Vender
+          <i class="material-icons left">shopping_cart</i>
+        </button>
+       </div>
+     </div>
 
 
 
