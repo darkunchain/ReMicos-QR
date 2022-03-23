@@ -21,6 +21,11 @@ export class FormComponent implements OnInit, OnDestroy {
   correo: FormControl = new FormControl;
   telefono: FormControl = new FormControl;
   codigo: FormControl = new FormControl;
+  redCaprichos: FormControl = new FormControl;
+  redRemicos: FormControl = new FormControl;
+  valido: FormControl = new FormControl;
+  comboNumber: FormControl = new FormControl;
+  comboName: FormControl = new FormControl;
 
 
 
@@ -34,7 +39,9 @@ export class FormComponent implements OnInit, OnDestroy {
 
 
 
-  constructor(private sendDataService:SendDataService, private router: Router,) {
+  constructor(private sendDataService:SendDataService, private router: Router, public fb: FormBuilder) {
+
+
 
     this.correo = new FormControl('',[
       Validators.required,
@@ -45,11 +52,24 @@ export class FormComponent implements OnInit, OnDestroy {
       Validators.required,
       Validators.minLength(8)
     ]);
+    this.redCaprichos = new FormControl();
+    this.redRemicos = new FormControl();
+    this.valido = new FormControl();
+    this.comboNumber = new FormControl('',[Validators.required]);
+    this.comboName = new FormControl();
+
+
+
 
     this.formulario = new FormGroup({
       correo: this.correo,
       telefono: this.telefono,
-      codigo: this.codigo
+      codigo: this.codigo,
+      redCaprichos: this.redCaprichos,
+      redRemicos: this.redRemicos,
+      valido: this.valido,
+      comboNumber: this.comboNumber,
+      comboName: this.comboName
     });
   }
 
@@ -61,6 +81,11 @@ export class FormComponent implements OnInit, OnDestroy {
 
   onSubmit(datos:Cliente) {
     if (this.formulario.valid){
+      console.log('this.formulario: ', datos)
+      datos.valido = true
+      datos.redCaprichos = false
+      datos.redRemicos = false
+      datos.comboName = "promo "+datos.comboNumber
       this.sendDataService.postPromo(datos)
       this.subscribe1 = this.sendDataService.traeId().subscribe(data => {
         this.idToken = data

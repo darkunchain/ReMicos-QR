@@ -31,7 +31,7 @@ export class GenQRComponent implements OnInit, OnDestroy{
     this.subscriber1 = this.sendDataService.traeId().subscribe(data => {
       this.idToken = data;
       this.centerImage = this.ImgCaprichos
-      this.valor = 'http://app.remicos.com.co:8081/api/promos/' + data;
+      this.valor = 'http://back.remicos.com.co:8081/api/promos/' + data;
       //this.valor = 'http://app.remicos.com.co:84/';
       console.log('token en QR: ', data, 'valor: ', this.valor)
     })
@@ -50,7 +50,7 @@ export class GenQRComponent implements OnInit, OnDestroy{
   }
 
   goToRedimir(){
-    this.document.location.href = 'http://app.remicos.com.co:8081/api/promos/' + this.idToken;
+    this.document.location.href = 'http://back.remicos.com.co:8081/api/promos/' + this.idToken;
   }
 
   ngOnDestroy(){
