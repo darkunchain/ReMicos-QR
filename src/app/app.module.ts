@@ -11,6 +11,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { RedimirComponent } from './components/redimir/redimir.component';
 import { MaterializeButtonModule, MaterializeCardModule, MaterializeInputModule } from 'materialize-angular';
+import { ErrorComponent } from './components/error/error.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MaterializeButtonModule, MaterializeCardModule, MaterializeInputModule 
     GenQRComponent,
     FormComponent,
     HeaderComponent,
-    RedimirComponent
+    RedimirComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
