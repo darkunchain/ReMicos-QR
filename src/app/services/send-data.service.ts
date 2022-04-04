@@ -24,15 +24,9 @@ export class SendDataService {
       .set('Content-Type', 'application/json')
       .set('Cache-Control', 'no-cache');
     let options = { headers: httpHeaders };
-
-    console.log('Service_promo: ', promo)
-
     this.http.post<any>('http://back.remicos.com.co:8081/api/addPromo',promo,options).subscribe(data => {
         this.idPromo = data.token;
-        console.log('data.token: ',data)
         this.id$.next(this.idPromo);
-
-        console.log('this.idPromo: ',typeof this.idPromo)
       })
   }
 
