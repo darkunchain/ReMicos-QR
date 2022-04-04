@@ -89,7 +89,7 @@ export class FormComponent implements OnInit, OnDestroy {
       this.sendDataService.postPromo(datos)
       this.subscribe1 = this.sendDataService.traeId().subscribe(data => {
         this.idToken = data
-        console.log('data: ', data)
+        console.log('data: ', typeof this.idToken)
         if(this.idToken = "0"){
           console.log("token0")
           this.router.navigate(['/error'])
