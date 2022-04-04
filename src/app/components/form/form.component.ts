@@ -91,14 +91,12 @@ export class FormComponent implements OnInit, OnDestroy {
         this.idToken = data
         console.log('this.idToken: ', this.idToken)
         if(this.idToken == "1234aef1234aef1234aef123"){
-          console.log("token0")
           this.router.navigate(['/error'])
-        }else{
-          console.log("token_OK")
-          this.router.navigate(['/qrgen'])
         }
       })
       this.datosValidos=true
+      console.log("token_OK")
+      this.router.navigate(['/qrgen'])
     }else{
       console.log('datos no validos')
       this.router.navigate(['/home'])
