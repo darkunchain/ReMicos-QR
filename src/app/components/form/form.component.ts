@@ -90,15 +90,14 @@ export class FormComponent implements OnInit, OnDestroy {
       this.subscribe1 = this.sendDataService.traeId().subscribe(data => {
         this.idToken = data
         console.log('data: ', data)
+        if(this.idToken = "0"){
+          console.log("token0")
+          this.router.navigate(['/error'])
+        }else{
+          this.router.navigate(['/qrgen'])
+        }
       })
       this.datosValidos=true
-      if(this.idToken = "0"){
-        console.log("token0")
-        this.router.navigate(['/error'])
-      }else{
-        this.router.navigate(['/qrgen'])
-      }
-
     }else{
       console.log('datos no validos')
       this.router.navigate(['/home'])
